@@ -8,6 +8,7 @@ export const HomePage = ({ navigation }) => {
       title="Go to Tracker"
       onPress={() =>
         navigation.navigate('Tracker', { distance: 1000, price: 5.70 })
+
       }
     />
     <Button

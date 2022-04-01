@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { StyleSheet, Text, Button, View, Alert } from 'react-native';
 import { HomePage } from './HomePage';
-import { Tracker } from './Tracker';
+import Tracker from './Tracker';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { ScreenStackHeaderCenterView } from 'react-native-screens';
 import Preferences from './preferences';
@@ -17,8 +17,8 @@ export default function App() {
           component={HomePage}
           options={{ title: 'Fit & Save' }}
         />
-        <Stack.Screen name="Tracker" component={Tracker} />
         <Stack.Screen name="Preferences" component = {Preferences} />
+        <Stack.Screen name="Tracker" component={Tracker} distance={1000} />
       </Stack.Navigator>
     </NavigationContainer>
   );
