@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { StyleSheet, Text, Button, View, Alert } from 'react-native';
 import { HomePage } from './HomePage';
-import { Tracker } from './Tracker';
+import Tracker from './Tracker';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Stack = createNativeStackNavigator();
@@ -15,7 +15,7 @@ export default function App() {
           component={HomePage}
           options={{ title: 'HomePage' }}
         />
-        <Stack.Screen name="Tracker" component={Tracker} />
+        <Stack.Screen name="Tracker" component={Tracker} distance={1000} />
       </Stack.Navigator>
     </NavigationContainer>
   );
