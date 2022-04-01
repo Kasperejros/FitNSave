@@ -1,23 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
+import { NavigationContainer } from '@react-navigation/native';
 import { StyleSheet, Text, Button, View, Alert } from 'react-native';
+import { HomePage, Tracker } from './HomePage'
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
-  console.log('dupa')
   return (
-    <View style={styles.container}>
-      <Text>FIT</Text>
-      <Text>'N'</Text>
-      <Text>SAVE</Text>
-      <Button
-        onPress={() => Alert.alert('START')}
-        title="Start"
-      />
-      <Button
-      onPress={() => Alert.alert('CONFIG')}
-      title="Preferences"
-      />
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={HomePage}
+          options={{ title: 'HomePage' }}
+        />
+        <Stack.Screen name="Tracker" component={Tracker} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
