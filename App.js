@@ -3,6 +3,8 @@ import { StyleSheet, Text, Button, View, Alert } from 'react-native';
 import { HomePage } from './HomePage';
 import { Tracker } from './Tracker';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { ScreenStackHeaderCenterView } from 'react-native-screens';
+import Preferences from './preferences';
 
 const Stack = createNativeStackNavigator();
 
@@ -13,9 +15,10 @@ export default function App() {
         <Stack.Screen
           name="Home"
           component={HomePage}
-          options={{ title: 'HomePage' }}
+          options={{ title: 'Fit & Save' }}
         />
         <Stack.Screen name="Tracker" component={Tracker} />
+        <Stack.Screen name="Preferences" component = {Preferences} />
       </Stack.Navigator>
     </NavigationContainer>
   );
