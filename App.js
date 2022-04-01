@@ -1,10 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, Button, View, Alert } from 'react-native';
 
 export default function App() {
+  console.log('dupa')
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+      <Text>FIT</Text>
+      <Text>'N'</Text>
+      <Text>SAVE</Text>
+      <Button
+        onPress={() => Alert.alert('START')}
+        title="Start"
+      />
+      <Button
+      onPress={() => Alert.alert('CONFIG')}
+      title="Preferences"
+      />
       <StatusBar style="auto" />
     </View>
   );
