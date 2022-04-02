@@ -3,21 +3,25 @@ import { StyleSheet, Text, Button, View, Alert } from 'react-native';
 import { HomePage } from './HomePage';
 import Tracker from './Tracker';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Provider } from 'mobx-react';
+import Store from './Store';
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Home"
-          component={HomePage}
-          options={{ title: 'HomePage' }}
-        />
-        <Stack.Screen name="Tracker" component={Tracker} distance={1000} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Provider store={Store}>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Home"
+            component={HomePage}
+            options={{ title: 'HomePage' }}
+          />
+          <Stack.Screen name="Tracker" component={Tracker} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 }
 
