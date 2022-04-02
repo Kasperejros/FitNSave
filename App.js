@@ -5,6 +5,8 @@ import Tracker from './Tracker';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Provider } from 'mobx-react';
 import Store from './Store';
+import { ScreenStackHeaderCenterView } from 'react-native-screens';
+import Preferences from './preferences';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +20,7 @@ export default function App() {
             component={HomePage}
             options={{ title: 'HomePage' }}
           />
+          <Stack.Screen name="Preferences" component = {Preferences} />
           <Stack.Screen name="Tracker" component={Tracker} />
         </Stack.Navigator>
       </NavigationContainer>
