@@ -16,7 +16,6 @@ class Tracker extends React.Component {
     }
 
     static getDerivedStateFromProps(props, state) {
-        console.log('in derived')
         return {
             distance: props.store.distance,
             price: props.store.price,
